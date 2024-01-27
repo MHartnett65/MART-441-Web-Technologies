@@ -1,0 +1,3 @@
+# MART-441
+ Web Technologies
+I had trouble getting the AI to produce my homeowork. I believe using AI to come up with ideas is totally acceptable. I do not believe it is not if you are trying to make it do the work but using it for suggestions is acceptable and should be encouraged. We should be using this technology to push our creative brains instead of having it as a substitute. Putting in your own work into the site is still your work. It is simply getting suggestions from all the different pieces of work accross the internet. I think its a way to push us forward instead of holding us back. Even if the line is a tough one to tread on. 
