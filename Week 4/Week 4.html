@@ -1,0 +1,135 @@
+<html>
+    <style>
+        body{
+            background-color: salmon;
+        }
+    </style>
+    <script>
+        function getChoice1()
+        {
+            var myChoice = document.getElementById("choice").value;
+            var myQuestion = document.getElementById("question");
+            if(myChoice === "Mind")
+            {
+                document.getElementById("choice").style.display="none";
+                document.getElementById("btnSubmit").style.display="none";
+                
+                document.getElementById("choice2").style.display="block";
+                document.getElementById("btnSubmit2").style.display="block";
+                
+
+                myQuestion.innerHTML = "Mind is a great place to start. Are you willing to listen to your Elders?";
+            }
+            else if(myChoice === "Body")
+            {
+                document.getElementById("choice").style.display="none";
+                document.getElementById("btnSubmit").style.display="none";
+                
+                document.getElementById("choice3").style.display="block";
+                document.getElementById("btnSubmit3").style.display="block";
+                myQuestion.innerHTML = "Body is a great place to start. Are you willing to listen to your Inner Spirit?";
+
+            }
+            else
+            {
+                myQuestion.innerHTML = "Invalid answer";
+            }
+        
+        }
+        function getChoice2()
+        {
+            var answer = document.getElementById("choice2").value;
+            var myQuestion = document.getElementById("question");
+            if(answer === "yes")
+            {
+                
+                document.getElementById("choice4").style.display="block";
+                document.getElementById("btnSubmit4").style.display="block";
+                document.getElementById("mainImage").src= "Lou.jpg"
+                myQuestion.innerHTML = "That is the first step. Remember young one Elders are filled with wisdom and life experience. They are our Knowledge Keepers. There are two starting options to learn. Please select song or story.";
+            }
+            else if(answer === "no")
+            {
+                myQuestion.innerHTML = "You will not be ready for the road without them.";
+            }
+        }
+
+        function getChoice3()
+        {
+            var answer = document.getElementById("choice3").value;
+            var myQuestion = document.getElementById("question");
+            if(answer === "yes")
+            {
+                
+                document.getElementById("choice5").style.display="block";
+                document.getElementById("btnSubmit5").style.display="block";
+                document.getElementById("mainImage").src= "Lou.jpg"
+                myQuestion.innerHTML = "Close your eyes, take a deep breath and listen to the inner voice. Please choose work or rest";
+            }
+            else if(answer === "no")
+            {
+                myQuestion.innerHTML = "Pleae, your body needs that inner spirit to be whole.";
+            }
+        }
+        function getChoice4()
+        {
+            var answer = document.getElementById("choice4").value;
+            var myQuestion = document.getElementById("question");
+            if(answer === "song")
+            {
+                document.getElementById("mainImage").src = "Dinah.jpg"
+                myQuestion.innerHTML = "Great choice. Please start with this video. https://www.youtube.com/watch?v=QRB7cqLcyuw";
+            }
+            else if(answer === "story")
+            {
+                myQuestion.innerHTML = "Great choise. Please start with this video. https://www.youtube.com/watch?v=YfNAXpn-czw";
+            }
+        }
+        function getChoice5()
+        {
+            var answer = document.getElementById("choice5").value;
+            var myQuestion = document.getElementById("question");
+            if(answer === "work")
+            {
+                document.getElementById("mainImage").src = "Dinah.jpg"
+                myQuestion.innerHTML = "Great choice. Pleae start with this vidoe. https://www.youtube.com/watch?v=eH5zJxQETl4";
+            }
+            else if(answer === "rest")
+            {
+                myQuestion.innerHTML = "Great choise. Please start with this video. https://www.youtube.com/watch?v=FjCoYvXNaUA";
+            }
+        }
+    </script>
+    <body>
+
+        <h1>The Red Road</h1>
+        <br>
+        <img src="Eagle.JPG" id="mainImage">
+    <div id="question">
+    <br>
+        So you have decided to follow the Red Road young one.
+        <br>
+        With your troubles you can always seek the road your ancestors walk 
+        <br>
+        There are many ways the road goes we will start with this. Mind or Body<Body></Body>
+    </div>
+       
+        <br>
+        <input type="text" size="30" id="choice" value="Please enter Mind or Body">
+        <button id="btnSubmit" onclick="getChoice1();">Click to continue</button>
+
+        <input type="text" size="30" id="choice2" value="Enter yes or no." style="display:none">
+        <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Click to continue</button>
+
+        <input type="text" size="30" id="choice3" value="Enter yes or no."  style="display:none">
+        <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Click to continue</button>
+        
+        <input type="text" size="30" id="choice4" value="Enter song or story" style="display:none">
+        <button id="btnSubmit4" onclick="getChoice4();" style="display:none">Click to continue</button>
+
+        <input type="text" size="30" id="choice5" value="Enter work or rest" style="display:none">
+        <button id="btnSubmit5" onclick="getChoice5();" style="display:none">Click to continue</button>
+
+    </body>
+
+</html>
