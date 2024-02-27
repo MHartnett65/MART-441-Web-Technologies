@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Final Page</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Congratulations!</h1>
+    <div id="finalInfo"></div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Retrieve playerInfo and score from localStorage
+      const playerInfo = JSON.parse(localStorage.getItem('playerInfo'));
+      const score = JSON.parse(localStorage.getItem('score'));
+
+      const finalInfo = document.getElementById('finalInfo');
+      finalInfo.innerHTML = `<p>${playerInfo.firstName} ${playerInfo.lastName}, Age: ${playerInfo.age}</p>
+                             <p>Attempts: ${score.attempts}</p>
+                             <p>Matches: ${score.matches}</p>
+                             <p>Congratulations! You completed the game!</p>`;
+    });
+  </script>
+</body>
+</html>
