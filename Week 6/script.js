@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     if (introForm) {
       introForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent form submission
+        e.preventDefault(); 
         startGame();
       });
     }
@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
     const memoryGamePage = window.location.pathname.includes('memorygame.html');
     if (memoryGamePage) {
-      // Example: Call updateAttempts function when the game is complete
-      const totalAttempts = 10; // Replace with the actual total attempts made by the player
+      
+      const totalAttempts = 10; 
       updateAttempts(totalAttempts);
     }
   });
