@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #fff3e6; /* Light beige background */
+}
+
+#container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: contain; /* Change this to adjust the size (cover, contain, etc.) */
+    background-repeat: no-repeat;
+    transition: background 3s ease-in-out;
+}
+
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    text-align: center;
+    color: #09d9e0; /* Brown text color */
+}
+
