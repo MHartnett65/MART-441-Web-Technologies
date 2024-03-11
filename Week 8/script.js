@@ -10,7 +10,20 @@ $(document).ready(function() {
 
     function rotateImages() {
         currentIndex = (currentIndex + 1) % images.length;
-        $("#container").css("background-image", "url('" + images[currentIndex] + "')");
+
+        // Change the shape to an SVG path or other shape representation
+        var shapePath = "<path d='M10 10 L90 10 L50 90 Z' fill='#804000' />";
+        $("#shape").html(shapePath);
+
+        // Fade out the image and fade in the shape
+        $("#artwork").fadeOut(1000);
+        $("#shape").fadeIn(1000, function() {
+            // Set the new background image
+            $(this).fadeOut(1000, function() {
+                $(this).html(""); // Clear the shape content
+                $("#artwork").attr("src", images[currentIndex]).fadeIn(1000);
+            });
+        });
     }
 
     function rotateQuotes() {
@@ -21,5 +34,5 @@ $(document).ready(function() {
     }
 
     setInterval(rotateImages, 5000); 
-    setInterval(rotateQuotes, 7000); 
+    setInterval(rotateQuotes, 8000); 
 });

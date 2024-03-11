@@ -1,16 +1,25 @@
 body {
     margin: 0;
-    overflow: center;
-    background-color: #fff3e6; 
+    overflow: hidden;
+    background-color: #ffd3a3; /* Light beige background */
 }
 
 #container {
-    position: center;
-    width: 125vw;
-    height: 125vh;
-    background-size: contain; 
-    background-repeat: no-repeat;
-    transition: background 3s ease-in-out;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#shape-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#artwork, #shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #text {
@@ -18,8 +27,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 70px;
+    font-size: 24px;
     text-align: center;
-    color: #09d9e0; 
+    color: #2eb3f1; 
 }
 
