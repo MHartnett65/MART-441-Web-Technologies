@@ -16,12 +16,12 @@ $(document).ready(function() {
         $("#shape").html(shapePath);
 
         
-        $("#artwork").fadeOut(1000);
+        $("#artwork").slideDown(1000);
         $("#shape").fadeIn(1000, function() {
             
             $(this).fadeOut(1000, function() {
                 $(this).html(""); 
-                $("#artwork").attr("src", images[currentIndex]).fadeIn(1000);
+                $("#artwork").attr("src", images[currentIndex]).fadeOut(5000);
             });
         });
     }
@@ -29,7 +29,7 @@ $(document).ready(function() {
     function rotateQuotes() {
         $("#text").fadeOut(1000, function() {
             currentIndex = (currentIndex + 1) % quotes.length;
-            $(this).text(quotes[currentIndex]).fadeIn(1000);
+            $(this).text(quotes[currentIndex]).slideDown(1000);
         });
     }
 
