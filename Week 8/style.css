@@ -1,14 +1,14 @@
 body {
     margin: 0;
-    overflow: hidden;
-    background-color: #fff3e6; /* Light beige background */
+    overflow: center;
+    background-color: #fff3e6; 
 }
 
 #container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-size: contain; /* Change this to adjust the size (cover, contain, etc.) */
+    position: center;
+    width: 125vw;
+    height: 125vh;
+    background-size: contain; 
     background-repeat: no-repeat;
     transition: background 3s ease-in-out;
 }
@@ -18,8 +18,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
+    font-size: 70px;
     text-align: center;
-    color: #09d9e0; /* Brown text color */
+    color: #09d9e0; 
 }
 

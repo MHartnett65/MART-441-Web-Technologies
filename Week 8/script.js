@@ -20,6 +20,6 @@ $(document).ready(function() {
         });
     }
 
-    setInterval(rotateImages, 5000); // Rotate images every 5 seconds
-    setInterval(rotateQuotes, 8000); // Rotate quotes every 8 seconds
+    setInterval(rotateImages, 5000); 
+    setInterval(rotateQuotes, 7000); 
 });
