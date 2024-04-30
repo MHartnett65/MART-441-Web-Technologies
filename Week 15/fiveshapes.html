@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babylon.js First Page</title>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <style>
+        canvas {
+            touch-action: none; 
+            width: 800px; 
+            height: 600px; 
+        }
+    </style>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById("renderCanvas");
+        var engine = new BABYLON.Engine(canvas, true);
+
+        var createScene = function () {
+            var scene = new BABYLON.Scene(engine);
+            var camera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 0, -10), scene);
+            camera.setTarget(BABYLON.Vector3.Zero());
+            camera.attachControl(canvas, true);
+
+            var shapes = [];
+            shapes.push(BABYLON.MeshBuilder.CreateBox("box", { size: 1 }, scene));
+            shapes.push(BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 1 }, scene));
+            shapes.push(BABYLON.MeshBuilder.CreateCylinder("cylinder", { diameter: 1, height: 2 }, scene));
+            shapes.push(BABYLON.MeshBuilder.CreateTorus("torus", { diameter: 1, thickness: 0.3 }, scene));
+            shapes.push(BABYLON.MeshBuilder.CreatePlane("plane", { size: 2 }, scene));
+
+            for (var i = 0; i < shapes.length; i++) {
+                shapes[i].position.x = -3 + i * 2;
+            }
+
+            return scene;
+        };
+
+        var scene = createScene();
+
+        engine.runRenderLoop(function () {
+            scene.render();
+        });
+
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
+    </script>
+</body>
+</html>

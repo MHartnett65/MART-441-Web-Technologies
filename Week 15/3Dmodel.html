@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babylon.js Second Page</title>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <style>
+        canvas {
+            touch-action: none; 
+            width: 800px; 
+            height: 600px; 
+        }
+    </style>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById("renderCanvas");
+        var engine = new BABYLON.Engine(canvas, true);
+
+        var createScene = function () {
+            var scene = new BABYLON.Scene(engine);
+            var camera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 2, -5), scene); 
+            camera.setTarget(BABYLON.Vector3.Zero()); 
+            camera.attachControl(canvas, true);
+
+            var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+            light.intensity = 0.7;
+
+            BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "skull.babylon", scene, function (meshes) {
+                var skull = meshes[0];
+                skull.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1); 
+                skull.rotation.y = Math.PI; 
+
+                
+                camera.position = new BABYLON.Vector3(0, 2, -2);
+                camera.setTarget(skull.position); 
+            });
+
+            return scene;
+        };
+
+        var scene = createScene();
+
+        engine.runRenderLoop(function () {
+            scene.render();
+        });
+
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
+    </script>
+</body>
+</html>
